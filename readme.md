@@ -1,4 +1,4 @@
-#About Impact Bootstrap
+# About Impact Bootstrap
 
 Impact Bootstrap is a simple collection of scripts, code and stock art/sounds that can help you create HTML5 games faster. The Bootstrap consists of three areas: 
 
@@ -14,13 +14,13 @@ Impact Bootstrap is a simple collection of scripts, code and stock art/sounds th
 
 Here is a brief overview of the Impact Bootstrap and how to use it:
 
-##Scripts
+## Scripts
 There are two scripts folders: build and Photoshop. The **build** directory has an Ant build script along with templates for automating, building and deploying your Impact game. The **Photoshop** folder contains helpful scripts for automating artwork generation, such as sprite sheets in Photoshop. The following scripts are included in the Bootstrap:
 
 * **build.xml** is located in the build directory and will help automate compiling the game and deploying it to multiple platforms.
 * **LayersToSprite.js** is inside the Photoshop directory and will convert layers in a PSD to a sprite sheet.
 
-###Running The Ant Build
+### Running The Ant Build
 You will need to have Ant installed on your computer before you can run the script. Once you 
 have Ant installed, you will need to do the following:
 
@@ -34,13 +34,13 @@ run the default build target.
 
 Once you are comfortable running the build script, you can go in and modify the build targets by commenting out platforms you do not need. *(As of now, only Web and Chrome Market platforms are fully supported. Specific build scripts for each of the other platforms are coming soon.)*
 
-###Running The Photoshop Scripts
+### Running The Photoshop Scripts
 In order to run any of the Photoshop scripts:
 
 1. Open up a PSD to run the script on in Photoshop.
 2. From the `File` menu, select `Scripts`. Then, in the drop down, select `Browse…` in order to find the script you want to run from the system finder.
 
-##Impact
+## Impact
 The Impact directory is set up exactly like any default Impact project. Inside, you will find the following directories and files, which you can copy over to your own project:
 
 * **lib/game** contains the Bootstrap directory, some sample entities, a test level and a sample
@@ -51,7 +51,7 @@ game file (`main.js` && `config.js`) so you can test out the Bootstrap.
 Most of the core code that makes up the Impact Bootstrap lives in the `lib/bootstrap' 
 directory. Let's take a quick look at how the Bootstrap's plugins and entities work:
 
-###Bootstrap Plugins
+### Bootstrap Plugins
 Each of the plugins that make up the Impact Bootstrap were designed to work together or 
 independently allowing you to pick and choose which parts of the Bootstrap you want to include in your game. The plugins are broken down into two groups: **impact** and **weltmeister**.
 
@@ -79,7 +79,7 @@ More plugins are planned. Here are a few coming soon:
 Weltmeister random map generation plugin.
 * **utils.js** will have more utilities added to it, such as an experience/level calculator and more.
 
-###Weltmeister Plugins
+### Weltmeister Plugins
 To import the entire collection of Weltmeister-specific plugins, simply add `'bootstrap.weltmeister-bootstrap'` to the `weltmeister/weltmeister.js` module's requires block. Here is a list of the plugins currently in the bootstrap.
 
 * **random-map.js** adds the ability to generate random map generation via a new button in the level editor. *(A full panel to configure the random map generation settings is coming soon!)*
@@ -95,12 +95,12 @@ with
         
 which tells the editor to load entities from the `lib/bootstrap/entities` directory. This is also a good technique to use if you want to keep your custom entities in another location. *(I am working on making this automated a little better for future releases of the bootstrap.)*
 
-###Entities
+### Entities
 The Impact Bootstrap comes with its own set of entities, which you can use out of the box or 
 extend off of in order to help speed up game development. Entities are broken down into two 
 groups: base and ready to use.
 
-####Base Entities
+#### Base Entities
 Base entities are 'abstract classes' designed to allow you to extend them in your own game. They cannot be directly placed on the map without being extended and finalized with artwork and logic. The Impact Bootstrap comes with a set of examples showing how to use these base entities, which you can find inside the `impact/entities` directory. Let's take a look at the base entities:
 
 * **base-actor** represents any entity in your game that will move, have death animation and  possibly need some kind of AI. The base-actor supplies some stub methods and logic, such as the  ability to become "invincible", spawn particles when it receives damage or is killed, can be crushed by moving platforms, fall to its death (happens when the entity falls for too long then hits a *fixed* entity or something in the collision map) and more. Take a look at the class to see what has been added. The base-player and base-monster extend off this class.
@@ -130,7 +130,7 @@ Base entities are 'abstract classes' designed to allow you to extend them in you
 * **base-elevator.js** is a complex moving platform comprised of two invisibly moving platforms that stay in sync and form the top and bottom of the elevator. This allows the player to stand on top and not fall through the bottom of the elevator while still walking through it. It also has the ability to crush other entities that extend the `base-actor` class.
 * **base-weapons.js** - is a base set of weapons for players and enemies to use. This package includes the build to build automatic and non-automatic weapons and projectiles such as grenades.
     
-####Ready-To-Use Entities
+#### Ready-To-Use Entities
 The entities in the root of the Bootstrap entity directory can be used as is. These entities do have some dependencies on artwork in the media folder, but you can simply inject new properties into them if you need to resize or replace artwork. Here is a list of the ready-to-use entities:
 
 * **level-exit.js** allows the player to exit a level. When the player enters this invisible entity it calls `exitLevel()` which is injected into the `ig.game` class allowing you to handle exiting to the next level. The is useful of showing an end of level screen or simply returning to beginning of the game or start/level picker screen.
@@ -144,13 +144,13 @@ spawners, platforms and elevators.
        
 Now that we have covered how plugins and entities work, let's look at the last directory that makes up the Impact Bootstrap:
 
-##Resources
+## Resources
 The resources directory includes artwork and sound effects you can use to help prototype out your game quickly without having to worry about creating new artwork. The resource directory is broken down into artwork and sound effects:
 
-###Artwork
+### Artwork
 More stock artwork will be added as the Impact Bootstrap evolves. Right now there is a core set of artwork which is used by a few of the Bootstrap entities as well as folders specifically set up for each of the demos. You are free to repurpose the demo game artwork for yourself.
 
-###Sound Effects
+### Sound Effects
 Impact Bootstrap comes with a set of pre-generated sound effects, which you can use as placeholders or put them in your final game. In addition to the source wavs, you get a *bfxrlibrary* to see how the originals were created with [bfxr](http://www.bfxr.net). You will also find MP3 and Ogg versions in the `media/bootstrap/sounds` folder for use in Impact. *(.caf files for iOS are coming soon.)*
 
 * Death.wav
@@ -172,7 +172,7 @@ Impact Bootstrap comes with a set of pre-generated sound effects, which you can 
 * ShotgunFire.wav
 * StartGame.wav
 
-##Change Log
+## Change Log
 **v0.5.0-alpha**
 
 **This is a major update due to the new build script and moving the demo games out of the bootstrap **
@@ -224,21 +224,21 @@ Impact Bootstrap comes with a set of pre-generated sound effects, which you can 
 * Added base-item entity to the bootstrap which sets the foundation of equipment and power ups. Examples of how to use this class are part of the Jetroid demo.
 * Moved "core entities" into main bootstrap entity folder now that Impact v1.2.0 add support for ignoring entities in weltmeister.
 
-##Demos
+## Demos
 Impact Bootstrap comes with some demo games in order to show off how you can build your own games off of the bootstrap. I'll be filling in more details here as I build out each of the demo games.
 
-###Jetroid
+### Jetroid
 More info coming soon on this game, how it works and how to run in. Right now it's set up by default in the bootstrap. Check out its source code in `lib/bootstrap/demos/jetroid`.
 
 
 
-#Coming Soon
+# Coming Soon
 The Impact Bootstrap is still a work in progress. Here are some features I plan on adding:
 
-###Better Demo Game
+### Better Demo Game
 Right now I include a few example classes showing off how to set up a game using the Impact Bootstrap. I will eventually turn this into a full featured game. For now, check out the `main.js` module to see some techniques I use for configuring my games, customizing the main game class to handle auto-binding for touch and keyboard as well as a sample level showing off a few of the Bootstrap entities.
 
-###Game Templates 
+### Game Templates 
 These demo games will show off how to prototype our your ideas faster. Here are some ideas of templates I would like to include in the Bootstrap:
 
 * **Side Scroller** is the default template for Impact games.
@@ -247,19 +247,19 @@ These demo games will show off how to prototype our your ideas faster. Here are 
 * **Endless Runner** - auto-scrolls the map at a set speed and is based off a side 
 scroller template.
 
-###More Stock Artwork/Sounds
+### More Stock Artwork/Sounds
 I will continue to add more artwork for each of the game templates as well as more sound effects such as background music.
 
-###More Entities
+### More Entities
 I plan on porting over other entities from my games such as:
 
 * **barricade.js** is a destructible object that can be placed to slow down monsters.
 * **power-up-spawner.js** allows you to spawn monsters that grow increasingly stronger as they return back to the object pool.
 * **spawn-boss.js** is a trigger to spawn a boss battle when the player enters a location on the map.
 
-###Documentation On Platform Plugins
+### Documentation On Platform Plugins
 I plan on finishing up the platform-specific plugins and documenting how to use them.
 
 
-###Demo Site
+### Demo Site
 I'll be building a site to showcase each of the plugins along with example code on how to use them.
